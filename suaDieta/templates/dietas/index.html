@@ -3,4 +3,15 @@
 {% block content %}
     {% include 'partials/_menu.html' %}
     <p class="text-primary">Olá mundo</p>
+
+    {% for dieta in dietas %}
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card-body">
+            <h5 class="card-title">Dieta</h5>
+            <p class="card-text">{{dieta.igredientes}}</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+    {% endfor %}
 {% endblock %}
