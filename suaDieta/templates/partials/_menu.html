@@ -1,7 +1,17 @@
 {% load static %}
-<nav class="nav nav-pills flex-column flex-sm-row">
-    <a class="flex-sm-fill text-sm-center nav-link active" href="{% url 'teste' %}">Testando</a>
-    <a class="flex-sm-fill text-sm-center nav-link" href="#">Link</a>
-    <a class="flex-sm-fill text-sm-center nav-link" href="#">Link</a>
-    <a class="flex-sm-fill text-sm-center nav-link disabled" href="#">Disabled</a>
-</nav>
+<header>
+    <nav class="nav-menu">
+      <img class="logo" src="{% static 'images/Logo-white.svg' %}"></img>
+      <div class="mobile-menu">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+      <ul class="nav-list">
+        <li><a class="text-menu" href="#">Home</a></li>
+        <li><a class="text-menu" href="#">Receitas</a></li>
+      </ul>
+    </nav>
+</header>
+
+<script src="{% static 'js/myjs/index.js'  %}"></script>

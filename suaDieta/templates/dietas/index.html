@@ -2,16 +2,45 @@
 {% load static %}
 {% block content %}
     {% include 'partials/_menu.html' %}
-    <p class="text-primary">Olá mundo</p>
 
-    {% for dieta in dietas %}
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="..." alt="Card image cap">
-            <div class="card-body">
-            <h5 class="card-title">Dieta</h5>
-            <p class="card-text">{{dieta.igredientes}}</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+    <div class="container">
+
+        <div class="panel">
+            <div class="text">
+              <h1>Olá, Bem-vindo(a)!<br>É muito bom ver você novamente.</h1>
+              <p>Acompanhe suas dietas aqui:</p>
+            </div>
+
+            <div class="cards">
+                {% for dieta in dietas %}
+                
+                    <div class="card card-two">
+    
+                        <h3>{{ dieta.nome_dieta }}</h3>
+                        <p>{{ dieta.dias_semanas }}</p>
+                        <img class="" src="{% static 'images/diet-img.svg' %}"></img>
+    
+                        <div class="info">
+                        <div class="info-text">
+                            <p class="gram">{{ dieta.carbo }} gramas</p>
+                            <p class="kcal">{{ dieta.calorias }} kcal</p>
+                        </div>
+                        <img class="" src="{% static 'images/icon-visualization.svg' %}"></img>
+                        </div>
+    
+                    </div>
+                {% endfor %}
             </div>
         </div>
-    {% endfor %}
+    
+
+        
+
+        <div class="img-home">
+            <img class="" src="{% static 'images/woman.png' %}"></img>
+        </div>
+
+    </div>
+
+    {% include "partials/_paginatorProdutos.html" %}
 {% endblock %}
