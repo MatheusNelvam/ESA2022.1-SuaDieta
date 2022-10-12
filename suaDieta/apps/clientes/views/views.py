@@ -75,7 +75,7 @@ def login(request):
             if user is not None:
                 auth.login(request, user)
                 messages.success(request, "Login realizado com sucesso!")
-                return render(request, 'index.html')
+                return render(request, 'dietas/index.html')
             else:
                 messages.error(request, 'Credenciais invalidas!.')
                 return redirect('login')
@@ -87,12 +87,12 @@ def login(request):
             return render(request, 'usuarios/login.html')
         else:
             messages.error(request, 'Você já está logado! Por favor efetue o logout.')
-            return render(request, 'index.html')
+            return render(request, 'dietas/index.html')
 
 def logout(request):
     auth.logout(request)
     messages.success(request, 'Logout efetuado com sucesso!.')
-    return render(request, 'index.html')
+    return render(request, 'dietas/index.html')
 
 @login_required
 def dashboard(request):
