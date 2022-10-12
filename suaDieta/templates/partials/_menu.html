@@ -10,8 +10,11 @@
       <ul class="nav-list">
         <li><a class="text-menu" href="#">Home</a></li>
         <li><a class="text-menu" href="#">Receitas</a></li>
+        <li><a class="text-menu" href="{% url 'login' %}">Login</a></li>
+        <li><a class="text-menu" href="{% url 'cadastro' %}">Cadastro</a></li>
       </ul>
     </nav>
+    {% include 'partials/_alerts.html' %}
 </header>
 
 <script src="{% static 'js/myjs/index.js'  %}"></script>
