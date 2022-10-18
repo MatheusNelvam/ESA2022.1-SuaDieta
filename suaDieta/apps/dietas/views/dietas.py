@@ -25,6 +25,9 @@ def teste(request):
     
     return render(request, 'dietas/teste.html')
 
+
+    
+
 def forms(request):
     context = {}
 

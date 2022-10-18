@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 {% load static %}
 {% block content %}
 <div class="container mt-3">
@@ -7,8 +8,9 @@
         <!-- Security token -->
         {% csrf_token %}
 
+        {{form|crispy}}
         <!-- Using the formset -->
-        {{ form}}
+        
         <div class="text-center">
             <input type="submit" class="btn btn-primary btn-lg mt-2 mb-2 px-5 " value="Criar/Salvar">
         </div>
