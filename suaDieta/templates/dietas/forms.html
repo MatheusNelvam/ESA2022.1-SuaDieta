@@ -1,19 +1,22 @@
 {% extends 'base.html' %}
-{% load crispy_forms_tags %}
 {% load static %}
 {% block content %}
-<div class="container mt-3">
-    <form method="POST" enctype="multipart/form-data">
-
-        <!-- Security token -->
-        {% csrf_token %}
-
-        {{form|crispy}}
-        <!-- Using the formset -->
-        
-        <div class="text-center">
-            <input type="submit" class="btn btn-primary btn-lg mt-2 mb-2 px-5 " value="Criar/Salvar">
-        </div>
-    </form>
+{% include 'partials/_menu.html' %}
+{% load bootstrap %}
+<div class="container">
+    <section class="col-6">
+        <form method="POST" enctype="multipart/form-data">
+    
+            <!-- Security token -->
+            {% csrf_token %}
+    
+            <!-- Using the formset -->
+            {{ form.media }}
+            {{ form|bootstrap }}
+            
+            <input type="submit" value="Ok" class="btn btn-success mt-2">
+        </form>
+    </section>
 </div>
+
 {% endblock %}
