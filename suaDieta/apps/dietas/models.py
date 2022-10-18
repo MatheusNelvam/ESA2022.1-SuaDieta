@@ -22,8 +22,6 @@ class Dieta(models.Model):
     dias_semana = MultiSelectField(max_length=3, choices=dias_semana, blank=False, null=False, default="Seg" )
     carbo = models.IntegerField()
     calorias = models.IntegerField()
-    data_final = models.DateTimeField()
-    data_inicio = models.DateTimeField(datetime.datetime.now())
     dieta_concluida = models.BooleanField(default=False)
 
 
