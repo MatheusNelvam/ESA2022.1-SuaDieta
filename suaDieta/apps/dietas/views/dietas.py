@@ -5,6 +5,7 @@ from django.contrib import auth
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from dietas.forms import dietaform
 
 # Create your views here.
 def index(request):
@@ -23,3 +24,16 @@ def index(request):
 def teste(request):
     
     return render(request, 'dietas/teste.html')
+
+def forms(request):
+    context = {}
+
+    form = dietaform(request.POST or None)
+
+    if form.is_valid():
+        form.save()
+        return redirect('/index')
+
+    context["form"] = form
+
+    return render(request, "dietas/forms.html", context)    
