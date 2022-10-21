@@ -23,6 +23,8 @@ class Dieta(models.Model):
     carbo = models.IntegerField()
     calorias = models.IntegerField()
     dieta_concluida = models.BooleanField(default=False)
+    data_inicio = models.DateField()
+    data_final = models.DateField()
 
 
     def __str__(self):
