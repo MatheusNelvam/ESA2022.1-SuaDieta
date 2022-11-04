@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+{% load socialaccount %}
 <!-- Preloader -->
 
 {% include 'partials/_alerts.html' %}
@@ -39,6 +40,8 @@
             </div>
         </div>
     </div>
+
+    <a href="{% provider_login_url 'google' %}">Login With Google</a>
 </div>
 
 <script>
