@@ -40,7 +40,7 @@
     text-align: center;
     width: 170px;
     /* height: 277px; */
-    background: var(--color-primary);
+    background: #42B581;
     border-radius: 12px;
     flex-wrap: wrap;
 }

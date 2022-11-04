@@ -40,9 +40,13 @@
     text-align: center;
     width: 170px;
     /* height: 277px; */
-    background: var(--color-primary);
+    background: #42B581;
     border-radius: 12px;
     flex-wrap: wrap;
+}
+
+.card.card-two {
+    background: #42B581;
 }
 .card h3 {
     margin-bottom: 5px;

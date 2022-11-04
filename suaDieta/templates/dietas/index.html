@@ -24,7 +24,7 @@
                     <div class="card card-two">
     
                         <h3>{{ dieta.nome_dieta }}</h3>
-                        <p>{{ dieta.dias_semanas }}</p>
+                        <p>{{ dieta.dias_semana }}</p>
                         <img class="" src="{% static 'images/diet-img.svg' %}"></img>
     
                         <div class="info">
@@ -32,7 +32,7 @@
                             <p class="gram">{{ dieta.carbo }} gramas</p>
                             <p class="kcal">{{ dieta.calorias }} kcal</p>
                         </div>
-                        <img class="" src="{% static 'images/icon-visualization.svg' %}"></img>
+                        <a href="{%url 'view_dieta' dieta.id%}"><img class="" src="{% static 'images/icon-visualization.svg' %}" ></img></a>
                         </div>
     
                     </div>
