@@ -85,4 +85,7 @@ def view_dieta(request, dieta_id):
     context['dieta'] = dieta
     
     return render(request, "dietas/views.html", context)
-     
+    
+def signup_redirect(request):
+    messages.error(request, "Something wrong here, it may be that you already have account!")
+    return redirect("index")
