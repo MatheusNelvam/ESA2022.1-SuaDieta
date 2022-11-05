@@ -12,7 +12,7 @@
       <ul class="nav-list">
         <li><a class="text-menu" href="{% url 'index' %}">Home</a></li>
         {% if  user.is_authenticated %}
-        <li><a class="text-menu" href="#">Minhas Receitas</a></li>
+        <li><a class="text-menu" href="{% url 'minhas_receitas' %}">Minhas Receitas</a></li>
         <li><a class="text-menu" href="{% url 'logout' %}">Sair</a></li>
         {% endif %}
 
