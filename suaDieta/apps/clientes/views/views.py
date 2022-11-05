@@ -92,7 +92,7 @@ def login(request):
 def logout(request):
     auth.logout(request)
     messages.success(request, 'Logout efetuado com sucesso!.')
-    return render(request, 'dietas/index.html')
+    return redirect('index')
 
 @login_required
 def dashboard(request):

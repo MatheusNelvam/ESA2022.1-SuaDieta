@@ -85,6 +85,19 @@ def view_dieta(request, dieta_id):
     context['dieta'] = dieta
     
     return render(request, "dietas/views.html", context)
+
+@login_required
+def dashboard(request):
+    if request.user.is_authenticated:
+        id = request.user.id
+        dietas = Dieta.objects.order_by('-data_inicio').filter(pessoa=id)
+        
+        dados = {}
+        
+        dados['dietas'] = dietas
+        return render(request, 'dietas/dashboard.html', dados)
+    else:
+        return redirect('index')
     
 def signup_redirect(request):
     messages.error(request, "Something wrong here, it may be that you already have account!")
