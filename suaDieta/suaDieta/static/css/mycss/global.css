@@ -22,3 +22,58 @@ a {
 }
 
 .button-border-gree {}
+
+
+.pagination {
+  gap: 30px;
+}
+
+.page-link {
+  border: none;
+}
+
+.page-item.disabled .page-link {
+  border: 1px solid #42B581;
+  border-radius: 5px;
+  opacity: 0.5;
+
+}
+
+.page-item:first-child .page-link,
+.page-item:last-child .page-link {
+  border: none;
+  background: none;
+}
+
+.page-link:focus {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
+.page-item.active .page-link {
+  z-index: 1;
+  color: #42B581;
+  background-color: #007bff00;
+  font-size: 28px;
+  padding: 0px;
+
+  font-weight: bolder;
+}
+
+a.page-link.deactive {
+  z-index: 1;
+  color: #42B581;
+  background-color: #007bff00;
+  font-size: 28px;
+  padding: 0px;
+
+  opacity: 0.5;
+}
+
+a:not([href]):not([tabindex]):focus,
+a:not([href]):not([tabindex]):hover {
+  color: #42B581;
+}
+
+a.page-link.box-arrow {}
