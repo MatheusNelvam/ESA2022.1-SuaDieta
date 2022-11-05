@@ -4,10 +4,15 @@
     display: flex;
     justify-content: space-between; */
 
-    padding: 100px 0px;
+    padding: 100px 0px !important;
 
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    margin: auto !important;
+/* 
+    background-image: url("{% static 'images/Background-right.svg' %}");
+    background-repeat: no-repeat; */
+
 }
 
 .text h1 {
@@ -16,15 +21,17 @@
     line-height: 45px;
 
     margin-bottom: 30px;
+    text-align: center;
 }
 
 .text p {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 24px;
     color: var(--color-secundary);
     font-weight: 400;
 
     margin-bottom: 40px;
+    text-align: center;
 }
 
 .cards {
@@ -44,6 +51,7 @@
     border-radius: 12px;
     flex-wrap: wrap;
 }
+
 .card h3 {
     margin-bottom: 5px;
     font-weight: 500;
@@ -74,7 +82,7 @@ p.kcal {
     padding-bottom: 0px;
 }
 
-p.gram{
+p.gram {
     font-weight: 400;
     font-size: 16px;
     padding-bottom: 0px;
