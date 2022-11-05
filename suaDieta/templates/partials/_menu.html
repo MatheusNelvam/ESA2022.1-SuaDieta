@@ -17,7 +17,7 @@
         {% endif %}
 
         {% if not user.is_authenticated %}
-        <li><a class="text-menu" href="#">Minhas Receitas</a></li>
+        <li><a class="text-menu" href="{% url 'minhas_receitas' %}">Minhas Receitas</a></li>
         <li><a class="text-menu" href="{% url 'login' %}">Fazer Login</a></li>
         {% endif %}
       </ul>
