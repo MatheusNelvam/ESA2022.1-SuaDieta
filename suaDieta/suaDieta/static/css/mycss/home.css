@@ -4,15 +4,21 @@
     display: flex;
     justify-content: space-between; */
 
+<<<<<<< HEAD
     padding: 100px 0px !important;
 
+=======
+>>>>>>> google_auth
     display: flex;
     justify-content: center;
     margin: auto !important;
 /* 
     background-image: url("{% static 'images/Background-right.svg' %}");
     background-repeat: no-repeat; */
+<<<<<<< HEAD
 
+=======
+>>>>>>> google_auth
 }
 
 .text h1 {

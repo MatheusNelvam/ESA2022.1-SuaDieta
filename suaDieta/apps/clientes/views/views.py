@@ -87,7 +87,7 @@ def login(request):
             return render(request, 'usuarios/login.html')
         else:
             messages.error(request, 'Você já está logado! Por favor efetue o logout.')
-            return render(request, 'dietas/index.html')
+            return redirect('index')
 
 def logout(request):
     auth.logout(request)
