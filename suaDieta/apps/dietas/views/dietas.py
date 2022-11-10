@@ -77,7 +77,7 @@ def delete_dieta(request, dieta_id):
  
     return render(request, "dietas/delete.html", context)
      
-
+@login_required
 def view_dieta(request, dieta_id):
     context ={}
     dieta = get_object_or_404(Dieta, pk=dieta_id) 

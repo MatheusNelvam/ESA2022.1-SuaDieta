@@ -108,6 +108,4 @@ def dashboard(request):
     
     dados['dietas'] = dietas_per_page
     
-    # print(dados)
-    
-    return render(request, 'usuarios/dashboard.html', dados)
+    return render(request, 'dietas/dashboard.html', dados)
