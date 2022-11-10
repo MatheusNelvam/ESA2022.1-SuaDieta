@@ -94,18 +94,4 @@ def logout(request):
     messages.success(request, 'Logout efetuado com sucesso!.')
     return redirect('index')
 
-@login_required
-def dashboard(request):
-    id = request.user.id
-    
-    dietas = Dieta.objects.order_by('data_inicio').filter(pessoa=id)
-    
-    paginator = Paginator(dietas, 3)
-    page = request.GET.get('page')
-    dietas_per_page = paginator.get_page(page)
 
-    dados = {}
-    
-    dados['dietas'] = dietas_per_page
-    
-    return render(request, 'dietas/dashboard.html', dados)
