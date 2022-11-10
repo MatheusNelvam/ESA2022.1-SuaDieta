@@ -43,34 +43,38 @@
             </div>
 
             <div class="contact-form-area">
-                <form action="{% url 'login' %}" method="POST">
+                <form action="{% url 'cadastro' %}" method="POST">
                     {% csrf_token %}
+                    <div class="field-login email">
+                        <input type="text" id="nome" name="nome" required />
+                        <span>Nome completo</span>
+                    </div>
                     <div class="field-login email">
                         <input type="text" id="email" name="email" required />
                         <span>E-mail</span>
                     </div>
 
                     <div class="field-login password">
-                        <input type="password" id="senha" name="senha" required />
+                        <input type="password" id="senha" name="password" required />
                         <span>Senha</span>
+                    </div>
+
+                    <div class="field-login password">
+                        <input type="password" class="form-control" name="password2"  required/>
+                        <span>Digite sua senha mais uma vez</span>
                     </div>
 
                     <div class="buttons">
                         <button type="submit" class="submit button-background-green">
-                            Login
+                            Criar sua conta
                         </button>
 
-                        <button type="submit" class="submit button-border-green" onclick="exibirCriarConta()">
-                            Cadastre-se
+                        <button type="button" class="submit button-border-green">
+                            <a  href="{% url 'login' %}">Já tenho contra</a>
                         </button>
+
+                        
                     </div>
-
-                    <button class="btn btn-outline-info mt-2">
-                        <a href="{% provider_login_url 'google'%}?next=/">
-                            <i class="fab fa-google"></i>
-                            Login with Google
-                        </a>
-                    </button>
             </div>
 
             </form>
@@ -79,9 +83,11 @@
         <img class="img-login" src="{% static 'images/woman-login.png' %}"></img>
 
     </div>
-</div>
+</div> 
 
-<!-- <div class="contact-area section-padding-0-80">
+
+<!-- 
+<div class="contact-area section-padding-0-80">
     <div class="container">
         <div class="row">
             <div class="col-12">
