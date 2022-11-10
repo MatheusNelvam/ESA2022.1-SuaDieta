@@ -111,4 +111,3 @@ def dashboard(request):
     # print(dados)
     
     return render(request, 'usuarios/dashboard.html', dados)
-
