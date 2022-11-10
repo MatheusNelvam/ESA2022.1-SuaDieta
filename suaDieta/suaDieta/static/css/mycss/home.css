@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between; */
 
-    padding: 100px 0px !important;
+    padding: 100px 0px 50px 0px!important;
 
     display: flex;
     justify-content: center;
@@ -39,7 +39,8 @@
 
 .cards {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    gap: 30px;
 }
 
 .card {

@@ -7,54 +7,122 @@
 {% include 'partials/_alerts.html' %}
 
 <!-- ##### Contact Form Area Start ##### -->
+
+<link rel="stylesheet" href="{% static 'css/mycss/login.css' %}" />
+<link rel="stylesheet" href="{% static 'css/mycss/global.css' %}" />
+
+<header>
+    <nav class="nav-menu">
+        <img class="logo" src="{% static 'images/logo-menu-login.svg' %}"></img>
+        <div class="mobile-menu">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+        <ul class="nav-list">
+            <li><a class="text-menu" href="{% url 'index' %}">Home</a></li>
+            {% if user.is_authenticated %}
+            <li><a class="text-menu" href="#">Minhas Receitas</a></li>
+            <li><a class="text-menu" href="{% url 'logout' %}">Sair</a></li>
+            {% endif %}
+
+            {% if not user.is_authenticated %}
+            <li><a class="text-menu" href="#">Minhas Receitas</a></li>
+            <li><a class="text-menu" href="{% url 'login' %}">Fazer Login</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+</header>
+
+
 <div class="contact-area section-padding-0-80">
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="section-heading">
-                    <h2>Login</h2>
-                </div>
+        <div class="panel-login">
+
+            <div class="text">
+                <h1>Controle sua dieta e<br>alcançe os melhores resultado</h1>
+                <p>Bem-vindo(a) novamente. Por favor, faça login na sua conta.</p>
             </div>
+
+            <div class="contact-form-area">
+                <form action="{% url 'login' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="field-login email">
+                        <input type="text" id="email" name="email" required />
+                        <span>E-mail</span>
+                    </div>
+
+                    <div class="field-login password">
+                        <input type="password" id="senha" name="senha" required />
+                        <span>Senha</span>
+                    </div>
+
+                    <div class="buttons">
+                        <button type="submit" class="submit button-background-green">
+                            Login
+                        </button>
+
+                        <button type="button" class="submit button-border-green" onclick="exibirCriarConta()">
+                            Cadastre-se
+                        </button>
+                    </div>
+
+                    <button class="btn btn-outline-info mt-2">
+                        <a href="{% provider_login_url 'google'%}?next=/">
+                            <i class="fab fa-google"></i>
+                            Login with Google
+                        </a>
+                    </button>
+            </div>
+
+            </form>
         </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="contact-form-area">
-                    <form action="{% url 'login' %}" method="POST">
-                        {% csrf_token %}
-                        <div class="row">
-                            <div class="col-12 col-lg-12">
-                            <label for="email"><b>Email</b></label>
-                                <input type="text" id="email" class="form-control" name="email" placeholder="Entre com o email cadastrado">
-                            </div>
+
+
+
+        <!-- <div class="row">
+                <div class="col-12">
+                    <div class="contact-form-area">
+                        <form action="{% url 'login' %}" method="POST">
+                            {% csrf_token %}
+                            <div class="row">
                                 <div class="col-12 col-lg-12">
-                                <label for="senha"><b>Senha</b></label>
-                                <input id="senha" type="password" class="form-control" name="senha" placeholder="Digite aqui sua senha">
-                            </div>
-                            <div class="col-12 text-center">
-                                <button class="btn btn-success mt-2" type="submit">Acessar sua conta</button>
-                                <button type="button" class="btn btn-primary mt-2" onclick="exibirCriarConta()">Ainda não tem conta? Clique aqui</button>
+                                    <label for="email"><b>Email</b></label>
+                                    <input type="text" id="email" class="form-control" name="email"
+                                        placeholder="Entre com o email cadastrado">
+                                </div>
+                                <div class="col-12 col-lg-12">
+                                    <label for="senha"><b>Senha</b></label>
+                                    <input id="senha" type="password" class="form-control" name="senha"
+                                        placeholder="Digite aqui sua senha">
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button class="btn btn-success mt-2" type="submit">Acessar sua conta</button>
+                                    <button type="button" class="btn btn-primary mt-2"
+                                        onclick="exibirCriarConta()">Ainda não tem conta? Clique aqui</button>
 
-                                <button class="btn btn-outline-info mt-2">
-                                    <a href="{% provider_login_url 'google'%}?next=/">
-                                        <i class="fab fa-google"></i>
-                                        Login with Google
-                                    </a>
-                                </button>
+                                    <button class="btn btn-outline-info mt-2">
+                                        <a href="{% provider_login_url 'google'%}?next=/">
+                                            <i class="fab fa-google"></i>
+                                            Login with Google
+                                        </a>
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
+            </div> -->
 
-    
+
+
+        <img class="img-login" src="{% static 'images/woman-login.png' %}"></img>
+    </div>
 </div>
 
 <script>
-function exibirCriarConta()
-{
-     location.href = "{% url 'cadastro' %}";
-} 
+    function exibirCriarConta() {
+        location.href = "{% url 'cadastro' %}";
+    } 
 </script>
 {% endblock %}
