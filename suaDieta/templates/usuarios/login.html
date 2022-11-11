@@ -67,62 +67,25 @@
                         </button>
                     </div>
 
-                    <button class="btn btn-outline-info mt-2">
-                        <a href="{% provider_login_url 'google'%}?next=/">
-                            <i class="fab fa-google"></i>
-                            Login with Google
+                    <button class="button-google">
+                        <a class="a-google " href="{% provider_login_url 'google'%}?next=/">
+                            <i class="fab fa-google"><img class="img-google"
+                                    src="{% static 'images/logo-google.svg' %}"></i>
+                            Fazer login com o Google
                         </a>
                     </button>
+                </form>
             </div>
-
-            </form>
         </div>
 
-
-
-        <!-- <div class="row">
-                <div class="col-12">
-                    <div class="contact-form-area">
-                        <form action="{% url 'login' %}" method="POST">
-                            {% csrf_token %}
-                            <div class="row">
-                                <div class="col-12 col-lg-12">
-                                    <label for="email"><b>Email</b></label>
-                                    <input type="text" id="email" class="form-control" name="email"
-                                        placeholder="Entre com o email cadastrado">
-                                </div>
-                                <div class="col-12 col-lg-12">
-                                    <label for="senha"><b>Senha</b></label>
-                                    <input id="senha" type="password" class="form-control" name="senha"
-                                        placeholder="Digite aqui sua senha">
-                                </div>
-                                <div class="col-12 text-center">
-                                    <button class="btn btn-success mt-2" type="submit">Acessar sua conta</button>
-                                    <button type="button" class="btn btn-primary mt-2"
-                                        onclick="exibirCriarConta()">Ainda não tem conta? Clique aqui</button>
-
-                                    <button class="btn btn-outline-info mt-2">
-                                        <a href="{% provider_login_url 'google'%}?next=/">
-                                            <i class="fab fa-google"></i>
-                                            Login with Google
-                                        </a>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div> -->
-
-
-
         <img class="img-login" src="{% static 'images/woman-login.png' %}"></img>
+
     </div>
 </div>
 
 <script>
     function exibirCriarConta() {
         location.href = "{% url 'cadastro' %}";
-    } 
+    }
 </script>
 {% endblock %}

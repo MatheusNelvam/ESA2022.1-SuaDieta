@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient( to left, #42B58126 50%, #fff 50% );
+    background: linear-gradient( to left, rgba(66, 181, 129, 0.3) 50%, #fff 50% );
 }
 
 /*MENU-LOGIN*/
@@ -8,6 +8,11 @@ body {
     padding: 25px 0px;
     margin: auto;
     max-width: 1200px;
+}
+
+a:hover {
+    color: var(--color-primary);
+    text-decoration: none;
 }
 
 .container {
@@ -114,4 +119,15 @@ img.img-login{
 
     display: flex;
     gap: 30px;
+}
+
+a.button-a{
+    color: var(--color-primary);
+    text-decoration: none;
+    padding: 14px 20px;
+}
+
+a.button-a:hover {
+    color: #fff;
+    transition: 0.2s;
 }
