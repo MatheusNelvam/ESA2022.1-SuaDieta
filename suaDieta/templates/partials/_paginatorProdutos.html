@@ -3,23 +3,23 @@
         {% if dietas.has_other_pages %}
         <ul class="pagination justify-content-center">
           {% if dietas.has_previous %}
-            <li class="page-item"><a class="page-link" href="?page={{ dietas.previous_page_number }}">Anterior</a></li>
+            <li class="page-item box-arrow-left"><a class="page-link" href="?page={{ dietas.previous_page_number }}"><img src="{% static 'images/arrow-left.svg' %}" alt=""></a></li>
           {% else %}
-          <li class="page-item disabled"><a class="page-link">Anterior</a></li>
+          <li class="page-item disabled left"><a class="page-link box-arrow-left"><img src="{% static 'images/arrow-left.svg' %}" alt=""></a></li>
           {% endif %} 
 
           {% for pagina in dietas.paginator.page_range %}
           {% if dietas.number == pagina %}
-          <li class="page-item"><a class="page-link">{{ pagina }}</a></li>
+          <li class="page-item active"><a class="page-link">{{ pagina }}</a></li>
           {% else %}
-          <li class="page-item active"><a class="page-link" href="?page={{ pagina }}">{{ pagina }}</a></li>
+          <li class="page-item deactive"><a class="page-link deactive" href="?page={{ pagina }}">{{ pagina }}</a></li>
           {% endif %}
           {% endfor %}
 
           {% if dietas.has_next %}
-          <li class="page-item"><a class="page-link" href="?page={{ dietas.next_page_number }}">Próximo</a></li>
+          <li class="page-item box-arrow-right"><a class="page-link" href="?page={{ dietas.next_page_number }}"><img src="{% static 'images/arrow-right.svg' %}" alt=""></a></li>
           {% else %}
-          <li class="page-item disabled"><a class="page-link" href="">Proximo</a></li>
+          <li class="page-item disabled right"><a class="page-link box-arrow-right" href=""><img src="{% static 'images/arrow-right.svg' %}" alt=""></a></li>
           {% endif %}
         </ul>
         {% endif %}

@@ -25,9 +25,13 @@ def cadastro(request):
             messages.error(request,"O nome não pode ficar em branco")
             return redirect('cadastro')
         
+        if not email.strip():
+            messages.error(request,"O email não pode ficar em branco")
+            return redirect('cadastro')
+        
         # Validando se o campo de email não esta em branco
         if not nome.strip():
-            messages.error(request,"O campo email não pode ficar em branco")
+            messages.error(request,"O campo nome não pode ficar em branco")
             return redirect('cadastro')
             
         # Validando senha
@@ -94,20 +98,4 @@ def logout(request):
     messages.success(request, 'Logout efetuado com sucesso!.')
     return redirect('index')
 
-@login_required
-def dashboard(request):
-    id = request.user.id
-    
-    dietas = Dieta.objects.order_by('data_inicio').filter(pessoa=id)
-    
-    paginator = Paginator(dietas, 3)
-    page = request.GET.get('page')
-    dietas_per_page = paginator.get_page(page)
 
-    dados = {}
-    
-    dados['dietas'] = dietas_per_page
-    
-    # print(dados)
-    
-    return render(request, 'usuarios/dashboard.html', dados)

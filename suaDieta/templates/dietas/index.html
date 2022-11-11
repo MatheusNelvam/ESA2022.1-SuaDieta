@@ -34,7 +34,7 @@
                             <p class="gram">{{ dieta.carbo }} gramas</p>
                             <p class="kcal">{{ dieta.calorias }} kcal</p>
                         </div>
-                        <a href="{%url 'view_dieta' dieta.id%}"><img class="" src="{% static 'images/icon-visualization.svg' %}" ></img></a>
+                        <a class="icon-visualization" href="{%url 'view_dieta' dieta.id%}"><img class="" src="{% static 'images/icon-visualization.svg' %}" ></img></a>
                         </div>
     
                     </div>
@@ -43,6 +43,6 @@
         </div>
 
     </div>
-
     {% include "partials/_paginatorProdutos.html" %}
+
 {% endblock %}

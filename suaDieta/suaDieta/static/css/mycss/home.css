@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between; */
 
-    padding: 100px 0px !important;
+    padding: 100px 0px 50px 0px!important;
 
     display: flex;
     justify-content: center;
@@ -24,19 +24,23 @@
 }
 
 .text p {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 24px;
     color: var(--color-secundary);
     font-weight: 400;
 
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     text-align: center;
+}
+
+.panel {
+    width: 700px;
 }
 
 .cards {
     display: flex;
+    justify-content: space-evenly;
     gap: 30px;
-    align-items: center;
 }
 
 .card {
@@ -44,8 +48,7 @@
     color: #fff;
 
     text-align: center;
-    width: 170px;
-    /* height: 277px; */
+    width: 204px;
     background: var(--color-primary);
     border-radius: 12px;
     flex-wrap: wrap;
@@ -62,6 +65,8 @@
     font-size: 14px;
     font-weight: 400;
     padding-bottom: 20px;
+
+    margin: 0px;
 }
 
 .info {
@@ -69,7 +74,9 @@
     padding-top: 20px;
     justify-content: space-between;
 
-    padding-bottom: 25px;
+    padding-bottom: 30px;
+
+    align-items: flex-end;
 }
 
 .info-text {
@@ -85,9 +92,15 @@ p.gram {
     font-weight: 400;
     font-size: 16px;
     padding-bottom: 0px;
+    margin-bottom: 0px;
 }
 
 p.kcal {
     font-size: 24px;
     font-weight: 500;
+    margin-bottom: -10px;
+}
+
+.icon-visualization{
+    height: 36px;
 }
