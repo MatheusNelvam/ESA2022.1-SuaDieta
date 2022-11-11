@@ -25,9 +25,13 @@ def cadastro(request):
             messages.error(request,"O nome não pode ficar em branco")
             return redirect('cadastro')
         
+        if not email.strip():
+            messages.error(request,"O email não pode ficar em branco")
+            return redirect('cadastro')
+        
         # Validando se o campo de email não esta em branco
         if not nome.strip():
-            messages.error(request,"O campo email não pode ficar em branco")
+            messages.error(request,"O campo nome não pode ficar em branco")
             return redirect('cadastro')
             
         # Validando senha
