@@ -1,48 +1,73 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    
-
-    {% include 'partials/_menu.html' %}
-    {% include 'partials/_alerts.html' %}
-    <link rel="stylesheet" href="{% static 'css/mycss/home.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/mycss/global.css' %}" />
-    
-    <div class="container">
 
 
+{% include 'partials/_menu.html' %}
+{% include 'partials/_alerts.html' %}
+<link rel="stylesheet" href="{% static 'css/mycss/home.css' %}" />
+<link rel="stylesheet" href="{% static 'css/mycss/global.css' %}" />
 
-        <div class="panel">
+<div class="container">
 
-            <div class="text">
-              <h1>Olá, {{ user.username }}!<br>É muito bom ver você novamente.</h1>
-              <p>Aqui você pode acompanhar suas dietas:</p>
-            </div>
-            
 
-            <div class="cards">
-                {% for dieta in dietas %}
-                
-                    <div class="card card-two">
-    
-                        <h3>{{ dieta.nome_dieta }}</h3>
-                        <p>{{ dieta.dias_semana }}</p>
-                        <img class="" src="{% static 'images/diet-img.svg' %}"></img>
-    
-                        <div class="info">
+
+    <div class="panel">
+
+        <div class="text">
+            <h1>Olá, {{ user.username }}!<br>É muito bom ver você novamente.</h1>
+            <p>Aqui você pode acompanhar suas dietas:</p>
+        </div>
+
+        <div class="cards">
+            {% for dieta in dietas %}
+
+            <div class="card-external">
+
+                <div class="dropdown">
+                    <button onclick="myFunction()" class="dropclick"><img class="menu-icon dropclick" src="{% static 'images/menu-card.svg' %}"></button>
+
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="{%url 'view_dieta' dieta.id%}"><img class="dropdown-icon-edit" src="{% static 'images/edit-icon.svg' %}">
+
+                        <a href="{%url 'view_dieta' dieta.id%}"><img class="dropdown-icon-trash" src="{% static 'images/trash-icon.svg' %}"></a>
+                    </div>
+
+                </div>
+
+                <div class="card-inner">
+                    <h3>{{ dieta.nome_dieta }}</h3>
+                    <p>{{ dieta.dias_semana }}</p>
+                    <img class="" src="{% static 'images/diet-img.svg' %}"></img>
+
+                    <div class="info">
                         <div class="info-text">
                             <p class="gram">{{ dieta.carbo }} gramas</p>
                             <p class="kcal">{{ dieta.calorias }} kcal</p>
                         </div>
-                        <a href="{%url 'view_dieta' dieta.id%}"><img class="" src="{% static 'images/icon-visualization.svg' %}" ></img></a>
-                        </div>
-    
+                        <a href="{%url 'view_dieta' dieta.id%}"><img class=""
+                                src="{% static 'images/icon-visualization.svg' %}"></img></a>
                     </div>
-                {% endfor %}
-            </div>
-        </div>
+                </div>
 
+            </div>
+            {% endfor %}
+        </div>
     </div>
-    
-    {% include "partials/_paginatorProdutos.html" %}
+
+</div>
+
+<script>
+    $(document).on('click', ".dropclick", function () {
+        $(this).next(".dropdown-content").toggle("show");
+    });
+
+    window.onclick = function (event) {
+        if (!event.target.matches('.dropclick')) {
+            $(".dropdown-content").hide(100);
+        }
+    }
+</script>
+
+{% include "partials/_paginatorProdutos.html" %}
 {% endblock %}
