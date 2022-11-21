@@ -28,9 +28,9 @@
                     <button onclick="myFunction()" class="dropclick"><img class="menu-icon dropclick" src="{% static 'images/menu-card.svg' %}"></button>
 
                     <div id="myDropdown" class="dropdown-content">
-                        <a href="{%url 'view_dieta' dieta.id%}"><img class="dropdown-icon-edit" src="{% static 'images/edit-icon.svg' %}">
+                        <a href="{%url 'change_dieta' dieta.id%}"><img class="dropdown-icon-edit" src="{% static 'images/edit-icon.svg' %}">
 
-                        <a href="{%url 'view_dieta' dieta.id%}"><img class="dropdown-icon-trash" src="{% static 'images/trash-icon.svg' %}"></a>
+                        <a href="{%url 'delete_dieta' dieta.id%}"><img class="dropdown-icon-trash" src="{% static 'images/trash-icon.svg' %}"></a>
                     </div>
 
                 </div>
