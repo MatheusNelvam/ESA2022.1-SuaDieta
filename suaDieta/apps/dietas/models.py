@@ -19,7 +19,7 @@ class Dieta(models.Model):
     nome_dieta = models.CharField(max_length=100)
     descricao = models.TextField()
     ingredientes = models.TextField()
-    dias_semana = MultiSelectField(max_length=3, choices=dias_semana, blank=False, null=False, default="Seg" )
+    dias_semana = MultiSelectField(max_length=27, choices=dias_semana, blank=False, null=False, default="Seg" )
     carbo = models.IntegerField()
     calorias = models.IntegerField()
     dieta_concluida = models.BooleanField(default=False)
