@@ -145,3 +145,13 @@ img.dropdown-icon-trash {
 .show {
     display: block;
 }
+
+.with-css {
+    width: 170px;
+}
+
+.with-css p {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
