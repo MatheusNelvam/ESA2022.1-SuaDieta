@@ -19,6 +19,7 @@ def index(request):
     dados = {}
     
     dados['dietas'] = dietas_per_page
+    dados["title"] = "Home"
     
     return render(request, 'dietas/index.html', dados)
 
@@ -42,6 +43,7 @@ def forms(request):
 
     context["form"] = form  
     context["user"] = user
+    context["title"] = "Criar Dietas"
 
     return render(request, "dietas/forms.html", context)  
 
@@ -64,6 +66,7 @@ def change_dieta(request, dieta_id):
         return redirect('index')
     
     context["form"] = form
+    context["title"] = "Alterar Dieta"
  
     return render(request, "dietas/forms.html", context) 
 
@@ -79,6 +82,7 @@ def delete_dieta(request, dieta_id):
         return redirect("index")
     
     context['dieta'] = dieta
+    context["title"] = "Deletar Dieta"
     
     if request.method =="POST":
         # delete object
@@ -95,6 +99,7 @@ def view_dieta(request, dieta_id):
     dieta = get_object_or_404(Dieta, pk=dieta_id) 
     
     context['dieta'] = dieta
+    context["title"] = "Visualizar Dieta"
     
     return render(request, "dietas/views.html", context)
 
@@ -107,6 +112,8 @@ def dashboard(request):
         dados = {}
         
         dados['dietas'] = dietas
+        dados["title"] = "Minhas Dietas"
+
         return render(request, 'dietas/dashboard.html', dados)
     else:
         return redirect('index')
@@ -114,19 +121,3 @@ def dashboard(request):
 def signup_redirect(request):
     messages.error(request, "Something wrong here, it may be that you already have account!")
     return redirect("index")
-
-@login_required
-def dashboard(request):
-    id = request.user.id
-    
-    dietas = Dieta.objects.order_by('data_inicio').filter(pessoa=id)
-    
-    paginator = Paginator(dietas, 3)
-    page = request.GET.get('page')
-    dietas_per_page = paginator.get_page(page)
-
-    dados = {}
-    
-    dados['dietas'] = dietas_per_page
-    
-    return render(request, 'dietas/dashboard.html', dados)
