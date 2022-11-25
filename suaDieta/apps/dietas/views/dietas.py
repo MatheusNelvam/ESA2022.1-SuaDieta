@@ -47,12 +47,12 @@ def forms(request):
 
 @login_required
 def change_dieta(request, dieta_id):
-    id = request.user.id
+    nome = request.user
     
     context ={}
     dieta = get_object_or_404(Dieta, pk=dieta_id) 
     
-    if dieta_id !=  id:
+    if dieta.pessoa !=  nome:
         messages.error(request,"Você não pode realizar essa operação!")
         return redirect("index")
     
@@ -69,12 +69,12 @@ def change_dieta(request, dieta_id):
 
 @login_required
 def delete_dieta(request, dieta_id):
-    id = request.user.id
+    nome = request.user
     
     context ={}
     dieta = get_object_or_404(Dieta, pk=dieta_id) 
     
-    if dieta_id !=  id:
+    if dieta.pessoa !=  nome:
         messages.error(request,"Você não pode realizar essa operação!")
         return redirect("index")
     
