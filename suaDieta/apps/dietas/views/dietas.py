@@ -63,11 +63,12 @@ def change_dieta(request, dieta_id):
     if form.is_valid():
         # print(form.id)
         form.save()
-        return redirect('index')
+        messages.success(request, "Dieta alterada com sucesso!")
+        return redirect('minhas_receitas')
     
     context["form"] = form
     context["title"] = "Alterar Dieta"
- 
+    
     return render(request, "dietas/forms.html", context) 
 
 @login_required
@@ -89,7 +90,8 @@ def delete_dieta(request, dieta_id):
         dieta.delete()
         # after deleting redirect to
         # home page
-        return redirect("index")
+        messages.success(request, "Dieta apagada com sucesso!")
+        return redirect("minhas_receitas")
  
     return render(request, "dietas/delete.html", context)
      

@@ -34,6 +34,8 @@
 
         <!--COLOCAR FORM AQUI DENTRO-->
 
+        {% include 'partials/_forms.html'%}
+
         <div class="buttons-dialog">
             <input class="button-background-green dialog-button-specific" type="submit" value="Salvar" />
             <button class="button-border-green dialog-button-specific" onclick="closeDialog()">Cancelar</button>
@@ -86,15 +88,18 @@
             <div class="card-external">
 
                 <div class="dropdown">
-                    <button onclick="myFunction()" class="dropclick"><img class="menu-icon dropclick"
-                            src="{% static 'images/menu-card.svg' %}"></button>
+                    <a  onclick="myFunction()" class="dropclick"><img class="menu-icon dropclick"
+                            src="{% static 'images/menu-card.svg' %}"></a>
 
                     <div id="myDropdown" class="dropdown-content">
-                        <button onclick="openDialogUpdate()" class="dropclick"><img class="dropdown-icon-edit"
-                                src="{% static 'images/edit-icon.svg' %}"></button>
+                        <a href="{%url 'change_dieta' dieta.id%}"  class="dropclick"><img class="dropdown-icon-edit"
+                                src="{% static 'images/edit-icon.svg' %}">
+                            
+                        </a>
+            
 
-                        <button onclick="openDialogDelete()" class="dropclick"><img class="dropdown-icon-trash"
-                                src="{% static 'images/trash-icon.svg' %}"></button>
+                        <a href="{%url 'delete_dieta' dieta.id%}"  class="dropclick"><img class="dropdown-icon-trash"
+                                src="{% static 'images/trash-icon.svg' %}" ></a>
                     </div>
 
                 </div>
@@ -111,8 +116,8 @@
                             <p class="gram">{{ dieta.carbo }} gramas</p>
                             <p class="kcal">{{ dieta.calorias }} kcal</p>
                         </div>
-                        <button onclick="openDialogView()" class="dropclick"><img
-                            src="{% static 'images/icon-visualization.svg' %}"></button>
+                        <a href="{%url 'view_dieta' dieta.id%}" class="dropclick"><img
+                            src="{% static 'images/icon-visualization.svg' %}"></a>
                     </div>
                 </div>
 
