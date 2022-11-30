@@ -11,7 +11,9 @@ from dietas.models import Dieta
 
 # Create your views here.
 def login(request):
-    return render(request, 'usuarios/login.html')
+    dados = {}
+    dados["title"] = "Login"
+    return render(request, 'usuarios/login.html', dados)
 
 def cadastro(request):
     if request.method == 'POST':
@@ -55,7 +57,9 @@ def cadastro(request):
         messages.success(request, "Usuário cadastrado com sucesso!")
         return redirect('login')
     else:
-        return render(request, 'usuarios/cadastro.html')
+        dados = {}
+        dados["title"] = "Cadastro"
+        return render(request, 'usuarios/cadastro.html', dados)
 
 def login(request):
     if request.method == 'POST':
@@ -78,8 +82,10 @@ def login(request):
             
             if user is not None:
                 auth.login(request, user)
+                dados = {}
+                dados["title"] = "Home"
                 messages.success(request, "Login realizado com sucesso!")
-                return render(request, 'dietas/index.html')
+                return render(request, 'dietas/index.html', dados)
             else:
                 messages.error(request, 'Credenciais invalidas!.')
                 return redirect('login')
@@ -87,8 +93,10 @@ def login(request):
                 messages.error(request, 'Credenciais invalidas!.')
                 return redirect('login')    
     else:
+        dados = {}
+        dados["title"] = "Login"
         if not request.user.is_authenticated:
-            return render(request, 'usuarios/login.html')
+            return render(request, 'usuarios/login.html',dados)
         else:
             messages.error(request, 'Você já está logado! Por favor efetue o logout.')
             return redirect('index')
