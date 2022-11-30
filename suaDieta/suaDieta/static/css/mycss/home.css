@@ -9,8 +9,8 @@
     display: flex;
     justify-content: center;
     margin: auto !important;
-    /* 
-    background-image: url("{% static 'images/Background-right.svg' %}");
+    
+    /* background-image: url("{% static 'images/background-home.svg' %}");
     background-repeat: no-repeat; */
 }
 

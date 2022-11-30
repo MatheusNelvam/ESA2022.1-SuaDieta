@@ -153,3 +153,40 @@ a:not([href]):not([tabindex]):focus,
 a:not([href]):not([tabindex]):hover {
   color: #42B581;
 }
+ 
+/*DIALOG POP UP*/
+  
+dialog {
+  text-align: center  ;
+  background-color: #fff;
+  border-radius: 12px;
+  width: 600px;
+  margin: auto;
+  padding: 35px;
+  border: 0px;
+}
+ 
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.3);
+}
+ 
+.buttons-dialog {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+ 
+.dialog-button-specific {
+  margin-bottom: 0px;
+}
+
+.card-popup {
+  margin: 50px 0px;
+}
+
+img.close-icon {
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  cursor: pointer;
+}
