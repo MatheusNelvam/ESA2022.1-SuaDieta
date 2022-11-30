@@ -9,8 +9,8 @@
     display: flex;
     justify-content: center;
     margin: auto !important;
-    /* 
-    background-image: url("{% static 'images/Background-right.svg' %}");
+    
+    /* background-image: url("{% static 'images/background-home.svg' %}");
     background-repeat: no-repeat; */
 }
 
@@ -144,4 +144,14 @@ img.dropdown-icon-trash {
 
 .show {
     display: block;
+}
+
+.with-css {
+    width: 170px;
+}
+
+.with-css p {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
