@@ -45,5 +45,5 @@ python manage.py runserver                  //Iniciar o servidor
 
 ## 🚩 Contribuidores
 
-| [<img src="https://avatars.githubusercontent.com/u/82915269?v=4" width=115><br><sub>Matheus Felipe</sub>](https://github.com/matheusfelipe20) |  [<img src="https://avatars.githubusercontent.com/u/69232156?v=4" width=115><br><sub>Kawhan Laurindo de Lima</sub>](https://github.com/Kawhan) |  [<img src="https://avatars.githubusercontent.com/u/71766411?v=4" width=115><br><sub>Pedro Luiz</sub>](https://github.com/edroluiz) | [<img src="https://avatars.githubusercontent.com/u/106180092?v=4" width=115><br><sub>Matheus Felipe</sub>](https://github.com/MatheusNelvam)
+| [<img src="https://avatars.githubusercontent.com/u/82915269?v=4" width=115><br><sub>Matheus Felipe</sub>](https://github.com/matheusfelipe20) |  [<img src="https://avatars.githubusercontent.com/u/69232156?v=4" width=115><br><sub>Kawhan Laurindo de Lima</sub>](https://github.com/Kawhan) |  [<img src="https://avatars.githubusercontent.com/u/71766411?v=4" width=115><br><sub>Pedro Luiz</sub>](https://github.com/edroluiz) | [<img src="https://avatars.githubusercontent.com/u/106180092?v=4" width=115><br><sub>Matheus Nelvam</sub>](https://github.com/MatheusNelvam)
 | :---: | :---: | :---: | :---: |
